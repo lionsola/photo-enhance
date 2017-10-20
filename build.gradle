@@ -1,0 +1,41 @@
+buildscript {
+
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+    dependencies {
+        classpath 'edu.sc.seis.gradle:launch4j:2.4.2'
+    }
+}
+
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "java"
+apply plugin: "edu.sc.seis.launch4j"
+
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
+
+launch4j {
+    outfile = 'Main.exe'
+    mainClassName = 'Main'
+    productName = 'PhotoEnhance'
+    headerType = 'console'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    jcenter()
+}
