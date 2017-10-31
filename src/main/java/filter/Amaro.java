@@ -22,7 +22,7 @@ public class Amaro extends WholeImageFilter {
         System.out.println("filterPixels: start");
         long tick = System.currentTimeMillis();
         final int INC = map.getHeight()/3;
-        //
+
         BufferedImage scaledBB = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = (Graphics2D) scaledBB.getGraphics();
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
